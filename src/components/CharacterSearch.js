@@ -78,31 +78,39 @@ const CharacterSearch = () => {
   return (
     <div className="main_wrap">
       <h1>memozi</h1>
-      <input
-        type="text"
-        placeholder="캐릭터 이름을 입력하세요"
-        value={characterName}
-        onChange={(e) => setCharacterName(e.target.value)}
-      />
-      <button onClick={handleSearch}>검색</button>
-
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-
+      <div className="search_area">
+        <input
+          className="search_input"
+          type="text"
+          placeholder="캐릭터 이름을 입력하세요."
+          value={characterName}
+          onChange={(e) => setCharacterName(e.target.value)}
+        />
+        <button onClick={handleSearch}>검색</button>
+      </div>
+      {error && <p style={{ color: '#db5656' }}>{error}</p>}
       {characterInfo && (
-        <div>
-          <div id="capture">
-            <p>월드: {characterInfo.world_name}</p>
-            <p>레벨: {characterInfo.character_level}</p>
-            <p>직업: {characterInfo.character_class}</p>
-            <img src={characterInfo.character_image} alt="캐릭터" />
-            <span id="char_name">{characterInfo.character_name}</span>
-            <textarea
-              value={memo}
-              onChange={(e) => setMemo(e.target.value)}
-              placeholder="메모를 작성하세요"
-            />
+        <div className="result_area">
+          <p>월드: {characterInfo.world_name}</p>
+          <p>레벨: {characterInfo.character_level}</p>
+          <p>직업: {characterInfo.character_class}</p>
+          <div className="capture_area">
+            <div id="capture">
+              <input
+                className="memo_input"
+                value={memo}
+                onChange={(e) => setMemo(e.target.value)}
+                placeholder="메모를 작성하세요 !"
+              />
+              <img src={characterInfo.character_image} alt="캐릭터" />
+              <span id="char_name">{characterInfo.character_name}</span>
+            </div>
           </div>
-          <button onClick={handleSaveImage}>이미지 저장</button>
+          <div className="btn_area">
+            <button className="save_btn" onClick={handleSaveImage}>
+              이미지 저장
+            </button>
+          </div>
         </div>
       )}
     </div>

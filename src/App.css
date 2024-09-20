@@ -1,38 +1,102 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f9;
+}
+
+.main_wrap {
+  margin-top: 60px;
+}
+
+.character-search-box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: rgb(64, 144, 209);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(154, 211, 238);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: rgb(64, 144, 209);
+}
+
+textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+img {
+  display: block;
+  margin: 10px auto;
+  width: 100px;
+  height: 100px;
+}
+
+p {
+  font-size: 16px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .character-search-box {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#capture {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#char_name {
+  width: 120px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  padding: 4px 8px;
+  border: 2px solid rgb(154, 211, 238);
+  margin-bottom: 20px;
 }

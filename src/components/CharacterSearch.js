@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { getCharacterId, getCharacterBasicInfo } from '../api/nexonApi';
 import html2canvas from 'html2canvas';
 import axios from 'axios';
+import '../App.css';
+
 const CharacterSearch = () => {
   const [characterName, setCharacterName] = useState('');
   const [characterInfo, setCharacterInfo] = useState(null);
@@ -74,8 +76,8 @@ const CharacterSearch = () => {
   };
 
   return (
-    <div>
-      <h1>메이플 캐릭터 조회</h1>
+    <div className="main_wrap">
+      <h1>memozi</h1>
       <input
         type="text"
         placeholder="캐릭터 이름을 입력하세요"
@@ -89,10 +91,11 @@ const CharacterSearch = () => {
       {characterInfo && (
         <div>
           <div id="capture">
-            <h2>{characterInfo.character_name}</h2>
+            <p>월드: {characterInfo.world_name}</p>
             <p>레벨: {characterInfo.character_level}</p>
             <p>직업: {characterInfo.character_class}</p>
             <img src={characterInfo.character_image} alt="캐릭터" />
+            <span id="char_name">{characterInfo.character_name}</span>
             <textarea
               value={memo}
               onChange={(e) => setMemo(e.target.value)}

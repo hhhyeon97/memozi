@@ -1,15 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Press Start 2P', system-ui;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(22, 22, 22);
+  /* background-color: rgb(22, 22, 22); */
 }
 
 .main_wrap {
   margin-top: 60px;
+}
+
+.title {
+  color: rgb(211, 104, 42);
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 35px;
+  letter-spacing: 4px;
+}
+
+.search_btn {
+  font-family: 'DungGeunMo';
 }
 
 .character-search-box {
@@ -21,22 +31,35 @@ body {
   width: 100%;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 35px;
-  color: lightslategray;
+.header_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_wrap svg {
+  position: relative;
+  bottom: 8px;
+  margin-right: 10px;
 }
 
 .search_input {
-  width: 50%;
-  height: 25px;
+  width: 400px;
+  height: 40px;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid lightslategray;
-  border-radius: 5px;
+  /* border: 1px solid lightslategray;
+  border-radius: 5px; */
   font-size: 16px;
   outline: none;
+  font-family: 'DungGeunMo';
+}
+
+.search_area button {
+  margin-left: 20px;
+  height: 40px;
+  position: relative;
+  bottom: 3px;
 }
 
 button {
@@ -68,6 +91,10 @@ p {
   margin: 5px 0;
 }
 
+.error_msg {
+  font-family: 'DungGeunMo';
+}
+
 @media screen and (max-width: 600px) {
   .character-search-box {
     max-width: 100%;
@@ -79,9 +106,10 @@ p {
     height: 80px;
   }
 }
-.result_area p {
-  color: white;
+.result_area ul {
+  font-family: 'DungGeunMo';
 }
+
 .capture_area {
   display: flex;
   justify-content: center; /* 수평 중앙 정렬 */
@@ -101,7 +129,6 @@ p {
   justify-content: space-between;
   background-color: white;
   padding: 10px;
-  background-image: url('../public/thumb_58.jpg');
 }
 
 #capture img {
@@ -140,13 +167,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.search_area button {
-  margin-left: 20px;
-  position: relative;
-  top: 5px;
-  height: 45px;
 }
 
 .btn_area {

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { getCharacterId, getCharacterBasicInfo } from '../api/nexonApi';
 import axios from 'axios';
-import '../App.css';
 import domtoimage from 'dom-to-image';
 
 const CharacterSearch = () => {
@@ -9,6 +8,7 @@ const CharacterSearch = () => {
   const [characterInfo, setCharacterInfo] = useState(null);
   const [error, setError] = useState('');
   const [memo, setMemo] = useState('');
+  const captureRef = useRef(null); // 캡처 영역에 대한 ref
 
   const handleSearch = async () => {
     try {
@@ -26,9 +26,7 @@ const CharacterSearch = () => {
   };
 
   const handleSaveImage = async () => {
-    const captureElement = document.getElementById('capture');
-
-    if (!characterInfo) return; // characterInfo가 없으면 종료
+    if (!characterInfo) return;
 
     try {
       // 1. 프록시 서버를 통해 캐릭터 이미지 URL 가져오기
@@ -37,14 +35,14 @@ const CharacterSearch = () => {
       );
 
       // 2. 이미지 교체
-      const imgElement = document.querySelector('#capture img');
+      const imgElement = captureRef.current.querySelector('img');
       if (imgElement) {
         imgElement.src = characterImageUrl; // 이미지 교체
       }
 
       // 3. dom-to-image로 캡처 후 다운로드
       domtoimage
-        .toPng(captureElement)
+        .toPng(captureRef.current)
         .then((dataUrl) => {
           const link = document.createElement('a');
           link.href = dataUrl;
@@ -77,25 +75,32 @@ const CharacterSearch = () => {
 
   return (
     <div className="main_wrap">
-      <h1>memozi</h1>
-      <div className="search_area">
+      <h1 class="title">memozi</h1>
+      <div className="nes-field search_area ">
         <input
-          className="search_input"
+          className="nes-input search_input "
           type="text"
-          placeholder="캐릭터 이름을 입력하세요."
+          placeholder="캐릭터 이름으로 검색하세요 : )"
           value={characterName}
           onChange={(e) => setCharacterName(e.target.value)}
         />
-        <button onClick={handleSearch}>검색</button>
+        <button className="nes-btn search_btn" onClick={handleSearch}>
+          검색
+        </button>
       </div>
-      {error && <p style={{ color: '#db5656' }}>{error}</p>}
+      {error && (
+        <p className="nes-text is-error error_msg" style={{ color: '#db5656' }}>
+          {error}
+        </p>
+      )}
       {characterInfo && (
         <div className="result_area">
           <p>월드: {characterInfo.world_name}</p>
           <p>레벨: {characterInfo.character_level}</p>
           <p>직업: {characterInfo.character_class}</p>
           <div className="capture_area">
-            <div id="capture">
+            <div id="capture" ref={captureRef}>
+              {/* <div id="capture"> */}
               <input
                 className="memo_input"
                 value={memo}

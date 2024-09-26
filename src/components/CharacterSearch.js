@@ -9,6 +9,7 @@ const CharacterSearch = () => {
   const [error, setError] = useState('');
   const [memo, setMemo] = useState('');
   const captureRef = useRef(null); // 캡처 영역에 대한 ref
+  const DEPLOY_PROXY_URL = process.env.PROXY_URL;
 
   const handleSearch = async () => {
     try {
@@ -61,7 +62,8 @@ const CharacterSearch = () => {
   const getImageFromProxy = async (imageUrl) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/character-image?url=${imageUrl}`,
+        // `http://localhost:5000/api/character-image?url=${imageUrl}`, // 로컬 프록시 서버
+        `${DEPLOY_PROXY_URL}/api/character-image?url=${imageUrl}`, // 배포 프록시 서버
         {
           responseType: 'blob',
         },
@@ -160,7 +162,7 @@ const CharacterSearch = () => {
             ></path>
           </g>
         </svg>
-        <a href="http://localhost:3000" className="header_title">
+        <a href="https://test-memozi.netlify.app" className="header_title">
           memozi
         </a>
       </div>

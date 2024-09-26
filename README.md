@@ -1,11 +1,10 @@
-# 📄 memozi
+# 🧍‍♂️ memozi
 
-메이플스토리 캐릭터 정보를 조회하고 메모와 함께 이미지를 저장할 수 있는 웹사이트
-입니다.
+메이플스토리 캐릭터 정보를 조회하고 메모와 함께 이미지를 저장할 수 있는 웹사이트입니다.
 
 ## 사용 기술 스택
 
-Frontend:
+<b>Frontend:</b>
 
 - create-react-app (5.0.1): 프로젝트 초기 설정
 - React (18.3.1): 사용자 인터페이스 구축
@@ -13,7 +12,7 @@ Frontend:
 - dom-to-image: DOM 요소를 이미지로 변환해 다운로드
 - nes.css: UI 스타일링
 
-API:
+<b>API:</b>
 
 - Nexon Open API: 메이플스토리 캐릭터 정보 조회
 

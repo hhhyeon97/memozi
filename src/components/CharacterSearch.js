@@ -9,7 +9,7 @@ const CharacterSearch = () => {
   const [error, setError] = useState('');
   const [memo, setMemo] = useState('');
   const captureRef = useRef(null); // 캡처 영역에 대한 ref
-  const DEPLOY_PROXY_URL = process.env.PROXY_URL;
+  const DEPLOY_PROXY_URL = process.env.REACT_APP_PROXY_URL;
 
   const handleSearch = async () => {
     try {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const DEPLOY_PROXY_URL = process.env.PROXY_URL;
+const DEPLOY_PROXY_URL = process.env.REACT_APP_PROXY_URL;
 
 // 캐릭터 식별자 조회 함수
 export const getCharacterId = async (characterName) => {

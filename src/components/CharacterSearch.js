@@ -41,9 +41,9 @@ const CharacterSearch = () => {
         imgElement.src = characterImageUrl; // 이미지 교체
       }
 
-      // 3. dom-to-image로 캡처 후 다운로드
+      // 3. dom-to-image로 캡처 후 다운로드 (useCORS 옵션 추가)
       domtoimage
-        .toPng(captureRef.current)
+        .toPng(captureRef.current, { useCORS: true })
         .then((dataUrl) => {
           const link = document.createElement('a');
           link.href = dataUrl;

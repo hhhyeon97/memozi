@@ -6,8 +6,8 @@ const DEPLOY_PROXY_URL = process.env.REACT_APP_PROXY_URL;
 export const getCharacterId = async (characterName) => {
   try {
     const response = await axios.get(
-      // `http://localhost:5000/api/character/id/${characterName}`,
-      `${DEPLOY_PROXY_URL}/api/character/id/${characterName}`,
+      `http://localhost:5000/api/character/id/${characterName}`,
+      // `${DEPLOY_PROXY_URL}/api/character/id/${characterName}`,
     );
     return response.data;
   } catch (error) {
@@ -20,8 +20,8 @@ export const getCharacterId = async (characterName) => {
 export const getCharacterBasicInfo = async (ocid) => {
   try {
     const response = await axios.get(
-      // `http://localhost:5000/api/character/basic/${ocid}`,
-      `${DEPLOY_PROXY_URL}/api/character/basic/${ocid}`,
+      `http://localhost:5000/api/character/basic/${ocid}`,
+      // `${DEPLOY_PROXY_URL}/api/character/basic/${ocid}`,
     );
     return response.data;
   } catch (error) {

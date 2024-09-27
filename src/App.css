@@ -1,12 +1,17 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('../public/DungGeunMo.ttf') format('truetype');
+}
+
 body {
-  font-family: 'Press Start 2P', system-ui;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'DungGeunMo';
 }
 
 .main_wrap {
-  margin-top: 80px;
+  /* margin-top: 80px; */
   height: auto;
   min-height: 80vh;
 }
@@ -23,6 +28,7 @@ a:hover {
   text-align: center;
   margin-bottom: 20px;
   font-size: 40px;
+  font-weight: bold;
 }
 
 .search_btn {
@@ -43,6 +49,16 @@ a:hover {
   align-items: center;
   justify-content: center;
   letter-spacing: 6px;
+
+  position: sticky;
+  top: 0;
+  height: 100px;
+  padding-top: 16px;
+  margin-bottom: 60px;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* blur 효과 적용 */
+  -webkit-backdrop-filter: blur(10px); /* Safari 브라우저 대응 */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .header_wrap svg {
@@ -127,13 +143,11 @@ img {
 .result_area ul li {
   width: 300px;
   text-align: center;
-  padding-left: 20px;
 }
 
 .result_title {
   margin-top: 20px;
   font-size: 24px;
-  color: lightslategray;
 }
 
 .capture_area {
@@ -143,8 +157,13 @@ img {
   margin-top: 10px;
 }
 
+.memozi_wrap {
+  background-color: aliceblue;
+}
+
 /**/
 #capture {
+  background-color: aliceblue;
   position: relative;
   width: 300px; /* 원하는 너비로 설정 */
   height: 400px; /* 원하는 높이로 설정 */
@@ -153,7 +172,6 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
   padding: 10px;
 }
 
@@ -166,7 +184,7 @@ img {
 }
 
 .memo_balloon {
-  z-index: 1000;
+  z-index: 999;
   margin-top: 30px;
 }
 
@@ -187,7 +205,7 @@ img {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 20px;
   outline: none;
 }
 
@@ -205,12 +223,18 @@ img {
 
 .footer_area {
   margin-top: 100px;
-  /* border-top: 2px solid rgba(0, 0, 0, 0.1); */
   position: relative;
   bottom: 0;
   text-align: center;
   padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.7);
+  border-bottom: none;
+  padding-top: 10px;
 }
+
 .footer_message {
   color: lightslategray;
+  font-size: 25px;
 }

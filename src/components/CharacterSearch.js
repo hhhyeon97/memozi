@@ -3,7 +3,7 @@ import { getCharacterId, getCharacterBasicInfo } from '../api/nexonApi';
 import axios from 'axios';
 import domtoimage from 'dom-to-image';
 // import { toPng } from 'html-to-image';
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
 
 const CharacterSearch = () => {
   const [characterName, setCharacterName] = useState('');
@@ -32,25 +32,44 @@ const CharacterSearch = () => {
   //   if (!characterInfo) return;
 
   //   try {
+  //     // 1. 프록시 서버를 통해 캐릭터 이미지 URL 가져오기
   //     const characterImageUrl = await getImageFromProxy(
   //       characterInfo.character_image,
   //     );
 
+  //     // 2. 이미지 교체
   //     const imgElement = captureRef.current.querySelector('img');
   //     if (imgElement) {
   //       imgElement.src = characterImageUrl; // 이미지 교체
   //     }
 
-  //     // html2canvas로 캡처
-  //     html2canvas(captureRef.current).then((canvas) => {
-  //       const dataUrl = canvas.toDataURL('image/png');
-  //       const link = document.createElement('a');
-  //       link.href = dataUrl;
-  //       link.download = `${characterInfo.character_name}_memo.png`;
-  //       link.click();
-  //     });
+  //     // // 3. dom-to-image로 캡처 후 다운로드
+  //     domtoimage
+  //       .toPng(captureRef.current)
+  //       .then((dataUrl) => {
+  //         const link = document.createElement('a');
+  //         link.href = dataUrl;
+  //         link.download = `${characterInfo.character_name}_memo.png`;
+  //         link.click();
+  //       })
+  //       .catch((error) => {
+  //         console.error('이미지 저장 중 오류:', error);
+  //       });
+
+  //     // ! test
+  //     //     domtoimage
+  //     // .toPng(captureRef.current, { cacheBust: true, useCORS: true })
+  //     // .then((dataUrl) => {
+  //     //   const link = document.createElement('a');
+  //     //   link.href = dataUrl;
+  //     //   link.download = `${characterInfo.character_name}_memo.png`;
+  //     //   link.click();
+  //     // })
+  //     // .catch((error) => {
+  //     //   console.error('이미지 저장 중 오류:', error);
+  //     // });
   //   } catch (error) {
-  //     console.error('이미지 저장 중 오류:', error);
+  //     console.error('이미지 가져오기 중 오류:', error);
   //   }
   // };
 
@@ -71,7 +90,7 @@ const CharacterSearch = () => {
 
       // 3. dom-to-image로 캡처 후 다운로드
       domtoimage
-        .toPng(captureRef.current)
+        .toPng(captureRef.current, { useCORS: true }) // useCORS 설정을 true로 설정
         .then((dataUrl) => {
           const link = document.createElement('a');
           link.href = dataUrl;
@@ -111,7 +130,7 @@ const CharacterSearch = () => {
         </a> */}
         {/*prettier-ignore*/}
         <a href="http://localhost:3000" className="header_title">
-        ✐☡✐☡✐☡✐☡✐☡✐☡✐☡✐☡ memozi
+        ✐☡✐☡✐ memozi
         </a>
       </div>
       <div className="nes-field search_area ">
@@ -285,194 +304,7 @@ const CharacterSearch = () => {
             <li>직업: {characterInfo.character_class}</li>
           </ul>
           <div className="capture_area">
-            <div class="nes-container with-title is-centered memozi_wrap">
-              <p class="title">
-                {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="-0.5 -0.5 30 30"
-                id="Interface-Essential-Pin--Streamline-Pixel"
-                height="30"
-                width="30"
-              >
-                <desc>
-                  Interface Essential Pin Streamline Icon:
-                  https://streamlinehq.com
-                </desc>
-                <title>interface-essential-pin</title>
-                <g>
-                  <path
-                    d="M26.92921875 7.594375h1.3775v2.7640624999999996h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M25.55171875 6.216875h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M24.16515625 10.358437499999999h2.7640624999999996v1.3775h-2.7640624999999996Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M24.16515625 4.8303125h1.3865625v1.3865625h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M22.78765625 8.971875h1.3775v1.3865625h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M22.78765625 3.4528125h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M21.401093749999998 10.358437499999999h1.3865625v1.3775h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M21.401093749999998 7.594375h1.3865625V8.971875h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M21.401093749999998 2.0662499999999997h1.3865625v1.3865625h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M20.02359375 15.8775h1.3775v4.1415625h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M20.02359375 11.735937499999999h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M20.02359375 6.216875h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M18.64609375 0.68875h2.755v1.3775h-2.755Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M18.64609375 20.0190625h1.3775v2.7640624999999996h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M18.64609375 13.1134375h1.3775v2.7640624999999996h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M18.64609375 4.8303125h1.3775v1.3865625h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M17.259531250000002 22.783125000000002h1.3865625v1.3775h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M17.259531250000002 6.216875h1.3865625v1.3775h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M17.259531250000002 2.0662499999999997h1.3865625v2.7640624999999996h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M15.882031249999999 14.5h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M15.882031249999999 7.594375h1.3775V8.971875h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M14.50453125 24.160625h2.755v1.3865625h-2.755Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M14.50453125 13.1134375h1.3775V14.5h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M13.11796875 22.783125000000002h1.3865625v1.3775h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M13.11796875 11.735937499999999h1.3865625v1.3775h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M13.11796875 8.971875h2.7640624999999996v1.3865625h-2.7640624999999996Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M11.74046875 21.405625h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="m3.45734375 26.9246875 1.3775 0 0 -1.3775 1.3775 0 0 -1.3865625 1.3865625 0 0 -1.3775 1.3775 0 0 -1.3775 2.7640624999999996 0 0 -1.3865625 -1.3865625 0 0 -1.3775 -1.3775 0 0 -1.3775 -1.3775 0 0 2.755 -1.3865625 0 0 1.3865625 -1.3775 0 0 1.3775 -1.3775 0 0 1.3775 -1.3865625 0 0 1.3865625 -1.3775 0 0 2.7640624999999996 2.7640624999999996 0 0 -1.3865625z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M8.97640625 7.594375h4.1415625V8.971875h-4.1415625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M6.2123437500000005 8.971875h2.7640624999999996v1.3865625h-2.7640624999999996Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M6.2123437500000005 15.8775h1.3865625v1.3865625h-1.3865625Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M4.83484375 14.5h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M4.83484375 10.358437499999999h1.3775v1.3775h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    d="M3.45734375 11.735937499999999h1.3775V14.5h-1.3775Z"
-                    fill="#000000"
-                    stroke-width="1"
-                  ></path>
-                </g>
-              </svg> */}
-              </p>
+            <div className="capture_wrap">
               <div id="capture" ref={captureRef}>
                 <div className="nes-balloon from-right memo_balloon">
                   <input

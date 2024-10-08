@@ -2,8 +2,6 @@ import React, { useState, useRef } from 'react';
 import { getCharacterId, getCharacterBasicInfo } from '../api/nexonApi';
 import axios from 'axios';
 import domtoimage from 'dom-to-image';
-// import { toPng } from 'html-to-image';
-// import html2canvas from 'html2canvas';
 
 const CharacterSearch = () => {
   const [characterName, setCharacterName] = useState('');
@@ -85,7 +83,7 @@ const CharacterSearch = () => {
         </a> */}
         {/*prettier-ignore*/}
         <a href="http://localhost:3000" className="header_title">
-         memozi<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" id="Interface-Essential-Message--Streamline-Pixel" height="45" width="45"><desc>Interface Essential Message Streamline Icon: https://streamlinehq.com</desc><title>interface-essential-message</title><g><path d="M41.78671875 11.784375h2.1375v17.1421875h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M39.64921875 28.9265625h2.1375v2.1375h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M39.64921875 9.646875h2.1375v2.1375h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M37.49765625 31.0640625h2.1515625v2.1515625h-2.1515625Z" fill="#000000" stroke-width="1"></path><path d="M37.49765625 7.4953125h2.1515625v2.1515625h-2.1515625Z" fill="#000000" stroke-width="1"></path><path d="M35.36015625 33.215625h2.1375v2.1375h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M35.36015625 5.3578125h2.1375v2.1375h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M33.20859375 35.353125h2.1515625v2.1375h-2.1515625Z" fill="#000000" stroke-width="1"></path><path d="M31.07109375 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#000000" stroke-width="1"></path><path d="M31.07109375 3.20625h4.2890625v2.1515625h-4.2890625Z" fill="#000000" stroke-width="1"></path><path d="M28.93359375 37.490625h4.275v2.1515625h-4.275Z" fill="#000000" stroke-width="1"></path><path d="M24.644531249999996 39.6421875h4.2890625v2.1375h-4.2890625Z" fill="#000000" stroke-width="1"></path><path d="m9.63984375 41.7796875 0 -2.1375 -2.1375 0 0 2.1375 -2.1375 0 0 2.1515625 19.2796875 0 0 -2.1515625 -15.0046875 0z" fill="#000000" stroke-width="1"></path><path d="M20.35546875 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#000000" stroke-width="1"></path><path d="M16.06640625 1.06875h15.0046875v2.1375h-15.0046875Z" fill="#000000" stroke-width="1"></path><path d="M11.79140625 3.20625h4.275v2.1515625h-4.275Z" fill="#000000" stroke-width="1"></path><path d="m11.79140625 37.490625 2.1375 0 0 -2.1375 -4.2890625 0 0 4.2890625 2.1515625 0 0 -2.1515625z" fill="#000000" stroke-width="1"></path><path d="M9.63984375 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#000000" stroke-width="1"></path><path d="M7.50234375 5.3578125h4.2890625v2.1375h-4.2890625Z" fill="#000000" stroke-width="1"></path><path d="M7.50234375 33.215625h2.1375v2.1375h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M5.36484375 31.0640625h2.1375v2.1515625h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M5.36484375 7.4953125h2.1375v2.1515625h-2.1375Z" fill="#000000" stroke-width="1"></path><path d="M3.21328125 28.9265625h2.1515625v2.1375h-2.1515625Z" fill="#000000" stroke-width="1"></path><path d="M3.21328125 9.646875h2.1515625v2.1375h-2.1515625Z" fill="#000000" stroke-width="1"></path><path d="M1.07578125 11.784375h2.1375v17.1421875H1.07578125Z" fill="#000000" stroke-width="1"></path></g></svg>
+        memozi<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" id="Interface-Essential-Message--Streamline-Pixel" height="45" width="45"><desc>Interface Essential Message Streamline Icon: https://streamlinehq.com</desc><title>interface-essential-message</title><g><path d="M41.78671875 11.784375h2.1375v17.1421875h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M39.64921875 28.9265625h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M39.64921875 9.646875h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M37.49765625 31.0640625h2.1515625v2.1515625h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M37.49765625 7.4953125h2.1515625v2.1515625h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M35.36015625 33.215625h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M35.36015625 5.3578125h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M33.20859375 35.353125h2.1515625v2.1375h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M31.07109375 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M31.07109375 3.20625h4.2890625v2.1515625h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M28.93359375 37.490625h4.275v2.1515625h-4.275Z" fill="#ffffff" stroke-width="1"></path><path d="M24.644531249999996 39.6421875h4.2890625v2.1375h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="m9.63984375 41.7796875 0 -2.1375 -2.1375 0 0 2.1375 -2.1375 0 0 2.1515625 19.2796875 0 0 -2.1515625 -15.0046875 0z" fill="#ffffff" stroke-width="1"></path><path d="M20.35546875 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M16.06640625 1.06875h15.0046875v2.1375h-15.0046875Z" fill="#ffffff" stroke-width="1"></path><path d="M11.79140625 3.20625h4.275v2.1515625h-4.275Z" fill="#ffffff" stroke-width="1"></path><path d="m11.79140625 37.490625 2.1375 0 0 -2.1375 -4.2890625 0 0 4.2890625 2.1515625 0 0 -2.1515625z" fill="#ffffff" stroke-width="1"></path><path d="M9.63984375 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M7.50234375 5.3578125h4.2890625v2.1375h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M7.50234375 33.215625h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M5.36484375 31.0640625h2.1375v2.1515625h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M5.36484375 7.4953125h2.1375v2.1515625h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M3.21328125 28.9265625h2.1515625v2.1375h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M3.21328125 9.646875h2.1515625v2.1375h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M1.07578125 11.784375h2.1375v17.1421875H1.07578125Z" fill="#ffffff" stroke-width="1"></path></g></svg>
         </a>
       </div>
       <div className="nes-field search_area ">
@@ -97,7 +95,7 @@ const CharacterSearch = () => {
           onChange={(e) => setCharacterName(e.target.value)}
         />
         <button className="nes-btn search_btn" onClick={handleSearch}>
-          검색
+          search
         </button>
       </div>
       {error && (
@@ -252,17 +250,19 @@ const CharacterSearch = () => {
       )}
       {characterInfo && (
         <div className="result_area lists">
-          <ul className="nes-list is-circle">
-            <span className="result_title">result</span>
-            <li>월드: {characterInfo.world_name}</li>
-            <li>레벨: {characterInfo.character_level}</li>
-            <li>직업: {characterInfo.character_class}</li>
-          </ul>
+          <div className="list_wrap">
+            <ul className="nes-list is-circle text_list">
+              <span className="result_title">result</span>
+              <li>월드: {characterInfo.world_name}</li>
+              <li>레벨: {characterInfo.character_level}</li>
+              <li>직업: {characterInfo.character_class}</li>
+            </ul>
+          </div>
           <div className="capture_area">
             <div className="capture_wrap">
               <div id="capture" ref={captureRef}>
-                <div className="nes-balloon from-right memo_balloon">
-                  <input
+                <div className="memo_balloon">
+                  <textarea
                     className="memo_input"
                     value={memo}
                     onChange={(e) => setMemo(e.target.value)}
@@ -274,17 +274,15 @@ const CharacterSearch = () => {
                   alt="캐릭터"
                   className="char_img"
                 />
-                <div className="nes-badge char_name">
-                  <span className="is-dark">
-                    {characterInfo.character_name}
-                  </span>
-                </div>
+                <span className="char_name">
+                  {characterInfo.character_name}
+                </span>
               </div>
             </div>
           </div>
           <div className="btn_area">
-            <button className="save_btn nes-btn" onClick={handleSaveImage}>
-              이미지 저장
+            <button className="save_btn btn" onClick={handleSaveImage}>
+              save
             </button>
           </div>
         </div>

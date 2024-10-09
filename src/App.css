@@ -64,14 +64,26 @@ a:hover {
   border-radius: 6px;
   border: 2px solid white;
   background-color: rgb(243, 242, 247);
+  text-align: center;
 }
 
-.search_area button {
+/* .search_area button {
   margin-left: 20px;
   position: relative;
   bottom: -4px;
-  padding: 18px;
   font-family: 'DungGeunMo';
+  padding: 8px 16px;
+  font-size: 22px;
+  height: 55px;
+} */
+.search_icon {
+  border: none;
+  background: none;
+}
+.search_area svg {
+  position: relative;
+  right: 20px;
+  top: 8px;
 }
 
 button {
@@ -110,11 +122,16 @@ img {
 }
 
 @media screen and (max-width: 600px) {
-  .character-search-box {
+  /* .character-search-box {
     max-width: 100%;
     padding: 15px;
+  } */
+  .search_input {
+    width: 70%;
   }
-
+  .search_icon {
+    display: none;
+  }
   img {
     width: 80px;
     height: 80px;
@@ -253,7 +270,7 @@ img {
 /* footer */
 
 .footer_area {
-  margin-top: 100px;
+  margin-top: 40px;
   position: relative;
   bottom: 0;
   text-align: center;

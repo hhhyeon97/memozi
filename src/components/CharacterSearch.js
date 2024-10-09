@@ -102,18 +102,182 @@ const CharacterSearch = () => {
         memozi<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" id="Interface-Essential-Message--Streamline-Pixel" height="45" width="45"><desc>Interface Essential Message Streamline Icon: https://streamlinehq.com</desc><title>interface-essential-message</title><g><path d="M41.78671875 11.784375h2.1375v17.1421875h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M39.64921875 28.9265625h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M39.64921875 9.646875h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M37.49765625 31.0640625h2.1515625v2.1515625h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M37.49765625 7.4953125h2.1515625v2.1515625h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M35.36015625 33.215625h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M35.36015625 5.3578125h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M33.20859375 35.353125h2.1515625v2.1375h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M31.07109375 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M31.07109375 3.20625h4.2890625v2.1515625h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M28.93359375 37.490625h4.275v2.1515625h-4.275Z" fill="#ffffff" stroke-width="1"></path><path d="M24.644531249999996 39.6421875h4.2890625v2.1375h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="m9.63984375 41.7796875 0 -2.1375 -2.1375 0 0 2.1375 -2.1375 0 0 2.1515625 19.2796875 0 0 -2.1515625 -15.0046875 0z" fill="#ffffff" stroke-width="1"></path><path d="M20.35546875 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M16.06640625 1.06875h15.0046875v2.1375h-15.0046875Z" fill="#ffffff" stroke-width="1"></path><path d="M11.79140625 3.20625h4.275v2.1515625h-4.275Z" fill="#ffffff" stroke-width="1"></path><path d="m11.79140625 37.490625 2.1375 0 0 -2.1375 -4.2890625 0 0 4.2890625 2.1515625 0 0 -2.1515625z" fill="#ffffff" stroke-width="1"></path><path d="M9.63984375 18.2109375h4.2890625V22.5h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M7.50234375 5.3578125h4.2890625v2.1375h-4.2890625Z" fill="#ffffff" stroke-width="1"></path><path d="M7.50234375 33.215625h2.1375v2.1375h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M5.36484375 31.0640625h2.1375v2.1515625h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M5.36484375 7.4953125h2.1375v2.1515625h-2.1375Z" fill="#ffffff" stroke-width="1"></path><path d="M3.21328125 28.9265625h2.1515625v2.1375h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M3.21328125 9.646875h2.1515625v2.1375h-2.1515625Z" fill="#ffffff" stroke-width="1"></path><path d="M1.07578125 11.784375h2.1375v17.1421875H1.07578125Z" fill="#ffffff" stroke-width="1"></path></g></svg>
         </a>
       </div>
-      <div className="nes-field search_area ">
+      <div className="nes-field search_area">
         <input
-          className="nes-input search_input "
+          className="search_input "
           type="text"
           placeholder="캐릭터 이름으로 검색하세요 : )"
           value={characterName}
           onChange={(e) => setCharacterName(e.target.value)}
           onKeyPress={handleKeyPress} // 엔터 키 입력 처리
         />
-        <button className="nes-btn search_btn" onClick={handleSearch}>
+        {/* <button className="search_btn btn" onClick={handleSearch}>
           search
-        </button>
+        </button> */}
+        {/* <button className="search_icon" onClick={handleSearch}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 40 40"
+            id="Search-Coding--Streamline-Pixel"
+            height="40"
+            width="40"
+          >
+            <desc>Search Coding Streamline Icon: https://streamlinehq.com</desc>
+            <title>search-coding</title>
+            <g>
+              <path
+                d="M37.15 29.53125h-1.9125V27.625h-1.9v-1.9h-1.9125v-3.8125h-1.9v3.8125H27.625v1.9h-1.9125v1.9125h-3.8v1.9h3.8v1.9h1.9125v1.9125h1.9v1.9h1.9v1.9h5.725v-1.9h1.9v-5.7125h-1.9Zm0 5.7125h-1.9125v-1.9125h-1.9v-1.9h-1.9125v-1.9h1.9125v1.9h1.9v1.9h1.9125Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M31.425 12.38125h1.9125v9.525h-1.9125Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M29.525000000000002 8.568750000000001h1.9v3.8125h-1.9Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M27.625 6.66875h1.9v1.9H27.625Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M25.7125 16.19375h1.9125v1.9h-1.9125Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M25.7125 4.76875h1.9125v1.9h-1.9125Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M23.8125 18.09375h1.9v1.9125h-1.9Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M23.8125 14.28125h1.9v1.9125h-1.9Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M21.9125 20.006249999999998h1.9v1.9h-1.9Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M21.9125 12.38125h1.9v1.9h-1.9Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M21.9125 2.85625h3.8v1.9125h-3.8Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M12.3875 31.43125h9.525v1.9H12.3875Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M18.1 12.38125H20v3.8125h-1.9Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M16.1875 16.19375h1.9125v1.9h-1.9125Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M14.2875 18.09375h1.9v3.8125h-1.9Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M12.3875 0.95625h9.525v1.9H12.3875Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M8.575000000000001 29.53125h3.8125v1.9H8.575000000000001Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M10.475000000000001 20.006249999999998h1.9125v1.9H10.475000000000001Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M10.475000000000001 12.38125h1.9125v1.9H10.475000000000001Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M8.575000000000001 2.85625h3.8125v1.9125H8.575000000000001Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M8.575000000000001 18.09375h1.9v1.9125H8.575000000000001Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M8.575000000000001 14.28125h1.9v1.9125H8.575000000000001Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M6.675 27.61875h1.9v1.9125H6.675Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M6.675 16.19375h1.9v1.9H6.675Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M6.675 4.76875h1.9v1.9H6.675Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M4.7625 25.71875h1.9125v1.9H4.7625Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M4.7625 6.66875h1.9125v1.9H4.7625Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M2.8625 21.90625h1.9v3.8125H2.8625Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M2.8625 8.568750000000001h1.9v3.8125H2.8625Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+              <path
+                d="M0.95 12.38125h1.9125v9.525H0.95Z"
+                fill="#ffffff"
+                stroke-width="1"
+              ></path>
+            </g>
+          </svg>
+        </button> */}
       </div>
       {error && (
         <p className="nes-text is-error error_msg" style={{ color: '#db5656' }}>

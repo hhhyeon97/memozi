@@ -106,7 +106,7 @@ img {
 .error_msg svg {
   margin-right: 10px;
   position: relative;
-  bottom: 2px;
+  top: 8px;
 }
 
 @media screen and (max-width: 600px) {
@@ -193,17 +193,9 @@ img {
   padding: 4px 12px;
 }
 
-/* .btn_area {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-} */
-
 /*버튼*/
 
 .btn {
-  font-size: 1.2em;
   width: 200px;
   height: 70px;
   background: #eeeeee;
@@ -222,9 +214,10 @@ img {
   margin-top: 40px;
   width: 200px;
   font-family: 'DungGeunMo';
-  font-size: 30px;
+  font-size: 35px;
 }
 
+/* 메모 부분 */
 .memo_balloon {
   z-index: 999;
   margin-top: 30px;
@@ -244,7 +237,7 @@ img {
   outline: none;
   overflow: hidden;
   resize: none;
-  border: 2px solid rgb(202, 202, 202);
+  border: 2px solid rgba(202, 202, 202, 0.5);
 }
 
 .search_area {
@@ -256,8 +249,6 @@ img {
 .btn_area {
   text-align: center;
 }
-
-/* 말풍선 */
 
 /* footer */
 

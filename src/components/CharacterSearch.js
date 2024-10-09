@@ -12,17 +12,33 @@ const CharacterSearch = () => {
   const DEPLOY_PROXY_URL = process.env.REACT_APP_PROXY_URL;
 
   const handleSearch = async () => {
+    const trimmedCharacterName = characterName.trim(); // 공백 제거
+
+    if (!trimmedCharacterName) {
+      alert('캐릭터명을 입력하세요!');
+      setCharacterName(''); // 입력창 비우기
+      return;
+    }
+
     try {
-      const characterData = await getCharacterId(characterName);
+      const characterData = await getCharacterId(trimmedCharacterName);
       if (characterData && characterData.ocid) {
         const basicInfo = await getCharacterBasicInfo(characterData.ocid);
         setCharacterInfo(basicInfo);
+        setCharacterName(''); // 검색 후 입력창 비우기
         setError('');
       } else {
         setError('캐릭터를 찾을 수 없습니다.');
       }
     } catch (e) {
       setError('API 요청 중 오류가 발생했습니다.');
+    }
+  };
+
+  // 엔터 키로 검색 가능하게 하기
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
     }
   };
 
@@ -93,6 +109,7 @@ const CharacterSearch = () => {
           placeholder="캐릭터 이름으로 검색하세요 : )"
           value={characterName}
           onChange={(e) => setCharacterName(e.target.value)}
+          onKeyPress={handleKeyPress} // 엔터 키 입력 처리
         />
         <button className="nes-btn search_btn" onClick={handleSearch}>
           search
@@ -248,7 +265,7 @@ const CharacterSearch = () => {
           {error}
         </p>
       )}
-      {characterInfo && (
+      {!error && characterInfo && (
         <div className="result_area lists">
           <div className="list_wrap">
             <ul className="nes-list is-circle text_list">
